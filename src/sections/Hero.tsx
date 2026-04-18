@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const HERO_IMAGE =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuBAokpX1Khas7t3adfj-zS52H14cAAtbHBt2o29PRBEZAnMZHD3p5kCaA9NiXFgCmzMUbyac40L6I1eG6ll9BBT5DXnmNYKccJGwOqSHS-8lh0T9WiZk3sTo6dTq3lg9qzShgHXhh0VRuQjde_l-7zVpHOV2dGof9I5DN0Y3Nlee-mCvcdBlpUxJZpwQwaSpWLiJC4A3eDHdxIslWE_XUggOUjBimmdpOmRXsTwFQWwe9HdwWVswJGQh6ykRukrxAES57AanfA2y6jv';
+const HERO_IMAGE = '/images/hero.webp';
 
 export default function Hero() {
   return (
@@ -41,8 +40,8 @@ export default function Hero() {
         </div>
         <div className="relative aspect-[3/4] overflow-hidden rounded-lg md:col-span-4">
           <img
-            alt="Elegant couple in minimalist setting"
-            className="h-full w-full object-cover contrast-125 grayscale"
+            alt="Alexander a Veronika v cyprusovej aleji"
+            className="h-full w-full object-cover"
             src={HERO_IMAGE}
           />
           <div className="vertical-rl absolute right-4 bottom-4 rotate-180">
