@@ -21,18 +21,18 @@ export const features: Feature[] = [
     icon: 'favorite',
     title: 'Obrad',
     description:
-      'Pod šírym nebom — na lúke pri zurčiacom potôčiku, medzi liptovskými dreveničkami.',
+      'Pod šírym nebom — na lúke pri horskom potoku.',
   },
   {
     icon: 'celebration',
     title: 'Hostina',
     description:
-      'V drevenej stodole inšpirovanej liptovským humnom.',
+      'V drevenej stodole v štýle tradičného liptovského humna.',
   },
   {
     icon: 'cottage',
     title: 'Ubytovanie',
     description:
-      'Tradičné dreveničky s raňajkami priamo v areáli — pre bližšiu rodinu a hostí z ďaleka.',
+      'Tradičné dreveničky s raňajkami priamo v areáli — pre hostí z ďaleka.',
   },
 ];

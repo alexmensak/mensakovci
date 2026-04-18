@@ -44,9 +44,6 @@ export default function Hero() {
                 className="h-full w-full object-cover"
                 src={HERO_IMAGE}
             />
-            <div className="vertical-rl absolute right-4 bottom-4 rotate-180">
-              <span className="eyebrow tracking-[0.3rem] text-[9px] text-white/80">Est. MMXXIV</span>
-            </div>
           </div>
         </div>
         <div className="absolute bottom-12 left-8 hidden md:block">

@@ -3,12 +3,12 @@ import { schedule } from '@/data/schedule';
 export default function Harmonogram() {
   return (
     <section id="harmonogram" className="px-8 py-24 md:px-24 md:py-48">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-16 md:grid-cols-12">
-        <div className="sticky-header-offset sticky self-start md:col-span-4">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-16 md:grid-cols-12 md:gap-20">
+        <div className="md:sticky-header-offset self-start md:sticky md:col-span-5">
           <span className="eyebrow mb-4 block">Časová os</span>
           <h2 className="section-title">Harmonogram</h2>
         </div>
-        <ul className="space-y-0 md:col-span-8">
+        <ul className="space-y-0 md:col-span-7">
           {schedule.map((item, index) => (
             <li
               key={item.time}

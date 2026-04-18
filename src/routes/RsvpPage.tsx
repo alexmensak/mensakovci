@@ -70,7 +70,7 @@ export default function RsvpPage() {
           <div className="hidden text-right md:block md:w-1/3">
             <p className="text-secondary font-body text-sm leading-relaxed opacity-70">
               Prosíme o potvrdenie vašej účasti do konca mája, aby sme mohli doladiť každý
-              architektonický detail našej spoločnej oslavy.
+              detail našej spoločnej oslavy.
             </p>
           </div>
         </section>

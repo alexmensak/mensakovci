@@ -16,7 +16,7 @@ export default function DrinkFields({ register }: { register: UseFormRegister<Rs
     <div className="space-y-12">
       <div className="bg-background sticky top-24 z-10 mb-8 py-4">
         <h2 className="text-primary border-outline-variant/15 border-b pb-4 font-label text-[11px] tracking-[0.1rem] uppercase">
-          03. Barový lístok
+          03. Nápojový lístok
         </h2>
       </div>
       <fieldset className="space-y-6">
@@ -24,8 +24,7 @@ export default function DrinkFields({ register }: { register: UseFormRegister<Rs
           Preferované nápoje
         </legend>
         <p className="text-secondary font-body text-sm leading-relaxed opacity-80">
-          Zaujíma nás vaša preferencia, aby sme vedeli prispôsobiť objednávku a zabezpečiť dostatok
-          vašich obľúbených nápojov. Môžete vybrať viacero možností.
+          Zaujíma nás vaša preferencia, aby sme vedeli prispôsobiť množstvo vašich obľúbených nápojov. Môžete vybrať viacero možností.
         </p>
         <div className="flex flex-wrap gap-4 pt-2">
           {drinkValues.map((value) => (

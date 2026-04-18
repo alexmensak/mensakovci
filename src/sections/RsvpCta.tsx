@@ -11,10 +11,10 @@ export default function RsvpCta() {
           to="/rsvp"
           className="bg-primary text-on-primary shadow-primary/10 inline-block rounded-lg px-16 py-6 font-label text-[12px] tracking-[0.2rem] uppercase shadow-xl transition-all hover:opacity-90"
         >
-          Potvrdiť účasť (RSVP)
+          Potvrdiť účasť
         </Link>
         <p className="text-secondary mt-8 font-label text-[10px] tracking-widest uppercase">
-          Prosíme o potvrdenie do 15. augusta 2024
+          Prosíme o potvrdenie do 31. Mája 2026
         </p>
       </div>
     </section>

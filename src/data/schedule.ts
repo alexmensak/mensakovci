@@ -15,6 +15,8 @@ export const schedule: ScheduleItem[] = [
   {
     time: '20:00',
     label: 'Tancovačka',
+    title: 'Večerná zábava',
+    subitems: ['Torta', 'Hádzanie kytice'],
   },
   {
     time: '24:00',

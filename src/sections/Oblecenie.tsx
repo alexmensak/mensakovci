@@ -13,8 +13,8 @@ export default function Oblecenie() {
           <span className="eyebrow mb-4 block">Dresscode</span>
           <h2 className="section-title mb-8">Oblečenie</h2>
           <p className="text-on-surface-variant mb-12 font-body text-lg leading-relaxed">
-            Naša svadba je ladená do prírodných, zemitých tónov. Budeme vďační, ak svoj outfit
-            prispôsobíte tejto palete. Prosíme o formálne oblečenie (Black Tie Optional).
+            Naša svadba bude ladená do prírodných, zemitých tónov. Budeme vďační, ak svoj outfit
+            prispôsobíte uvedenej palete. Prosíme o formálne oblečenie.
           </p>
           <ul className="flex flex-wrap gap-4">
             {dresscodePalette.map((swatch) => (
@@ -23,7 +23,7 @@ export default function Oblecenie() {
                   src={swatch.image}
                   alt=""
                   aria-hidden="true"
-                  className="h-16 w-16 rounded-lg object-cover"
+                  className="h-24 w-24 rounded-lg object-cover"
                   style={{ backgroundColor: swatch.hex }}
                 />
               </li>
