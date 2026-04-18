@@ -1,9 +1,9 @@
-export type Swatch = { name: string; hex: string };
+export type Swatch = { name: string; hex: string; image: string };
 
 export const dresscodePalette: Swatch[] = [
-  { name: 'Bone', hex: '#e2e3df' },
-  { name: 'Clay', hex: '#d5c4b4' },
-  { name: 'Stone', hex: '#837567' },
-  { name: 'Earth', hex: '#504539' },
-  { name: 'Amber', hex: '#AF7A39' },
+  { name: 'Forest', hex: '#134536', image: '/images/dresscode/forest.png' },
+  { name: 'Moss', hex: '#4e5742', image: '/images/dresscode/moss.png' },
+  { name: 'Sage', hex: '#87ae73', image: '/images/dresscode/sage.png' },
+  { name: 'Clay', hex: '#a17d65', image: '/images/dresscode/clay.png' },
+  { name: 'Cacao', hex: '#502d2a', image: '/images/dresscode/wine.png' },
 ];
