@@ -1,8 +1,11 @@
 import MapCard from '@/components/MapCard';
 import { features, venue, type Feature } from '@/data/venues';
 
-const MAP_IMAGE =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuBUr-aVMfHKx2wvpQzrr5ZAmHqUykuob21VfvCF16_KVL7F_qfNY1LiTkrkRXdQEXnWmI1iJzhWKutSHokb3rq8DEnZzYfoUg8VSV6uiuVmN109bU65T5Ht_9zQb0-j5ETzd6UqyPFmrIL3wNZmLMK8wiuPXoqIoPCVbXlbuKWk9Opu7mIP3Fz_AW2FbD4nAFLdTA6IQI_RM2Z09vcFV02uK2MP9T_k5Kn0MEYVeGHDwCNZtnpLR0_jqGOT8Xn6AjMCHfim0yJNlUFP';
+const MAP_IMAGE_BASE =
+  'https://images.squarespace-cdn.com/content/v1/60507de0d0d313245a0c79cf/3a6fb481-3a53-4f46-9569-a8f0ba5c6148/ACS_0002+%282%29.jpg';
+const MAP_IMAGE_SRCSET = [100, 300, 500, 750, 1000, 1500, 2500]
+  .map((w) => `${MAP_IMAGE_BASE}?format=${w}w ${w}w`)
+  .join(', ');
 
 export default function Miesto() {
   return (
@@ -18,12 +21,33 @@ export default function Miesto() {
                 stodole s drevenou konštrukciou a hlinenými omietkami, na dohľad od potoka
                 Štiavnica.
               </p>
+              <a
+                href="https://liptovskydvor.sk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group border-on-background/30 hover:border-on-background text-on-background mt-6 inline-flex items-center gap-3 border-b pb-2 font-label text-[11px] tracking-[0.2rem] uppercase transition-colors"
+              >
+                <span>Liptovský dvor</span>
+                <span
+                  className="material-symbols-outlined text-base transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                >
+                  north_east
+                </span>
+              </a>
             </div>
             <MapCard venue={venue} />
           </div>
           <div className="space-y-12 md:col-span-8">
             <div className="aspect-video overflow-hidden rounded-lg">
-              <img alt="Liptovský dvor" className="h-full w-full object-cover" src={MAP_IMAGE} />
+              <img
+                alt="Liptovský dvor"
+                className="h-full w-full object-cover"
+                src={`${MAP_IMAGE_BASE}?format=1500w`}
+                srcSet={MAP_IMAGE_SRCSET}
+                sizes="(min-width: 768px) 66vw, 100vw"
+                loading="lazy"
+              />
             </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {features.map((feature) => (

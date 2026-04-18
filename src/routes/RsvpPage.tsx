@@ -11,8 +11,7 @@ import IdentityFields from './rsvp/IdentityFields';
 import PhotosUpload from './rsvp/PhotosUpload';
 import { rsvpSchema, type RsvpFormValues } from './rsvp/schema';
 
-const RSVP_IMAGE =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuAifhAFyu5UQoJibxHU53sCpyUCrpv9nZ_zMmuofO693nLbUiE09Oa44auYV1Zcpv7u291vIEoNZuDByrjvv9R86L2COVZTWqvFMx4eIsfWYdyarucgpz1V3aGf7UJsMzs9yYCLwm--m78XK282xTM53wh21qu-joXxGu80AmoRpotXZxCDfoLxhOUt0eZyw4n2ZrUxNI62s9hQL7EjVg1MMy86znxzHqEOWeg6qtOW7C3Rzkw1KysH27Eedf6RMZJEWe2-pcrybrqN';
+const RSVP_IMAGE = '/images/rsvp.webp';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -82,11 +81,10 @@ export default function RsvpPage() {
               <div className="sticky top-32 space-y-12">
                 <div className="bg-surface-container relative aspect-[3/4] overflow-hidden rounded-lg">
                   <img
-                    alt="Wedding invitation detail"
-                    className="h-full w-full object-cover contrast-125 grayscale"
+                    alt="Detail svadobnej pozvánky"
+                    className="h-full w-full object-cover"
                     src={RSVP_IMAGE}
                   />
-                  <div className="bg-primary/5 absolute inset-0 mix-blend-multiply" />
                 </div>
               </div>
             </div>

@@ -11,7 +11,7 @@ export default function NavBar() {
         to="/"
         className="text-on-background dark:text-background font-newsreader text-2xl font-bold tracking-tighter"
       >
-        A&V
+        V&A
       </Link>
       <div className="hidden items-center gap-12 md:flex">
         {navLinks.map((link) => (

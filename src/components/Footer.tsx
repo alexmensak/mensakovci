@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="mt-24 flex w-full flex-col items-center gap-12 bg-[#f3f2ee] px-8 py-24 text-center dark:bg-[#252725]">
       <div className="text-on-background dark:text-background font-newsreader text-3xl italic">
-        Alexander & Veronika
+        Veronika & Alexander
       </div>
       <div className="flex flex-wrap justify-center gap-8 md:gap-16">
         {[...navLinks, { label: 'RSVP', to: '/rsvp' }].map((link) => (
@@ -21,7 +21,7 @@ export default function Footer() {
         ))}
       </div>
       <p className="nav-link text-on-background dark:text-background opacity-40">
-        © {year} Alexander & Veronika.
+        © {year} Veronika & Alexander.
       </p>
     </footer>
   );
