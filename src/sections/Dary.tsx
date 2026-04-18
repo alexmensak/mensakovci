@@ -17,6 +17,9 @@ export default function Dary() {
           „Vaša prítomnosť je pre nás najväčším darom. Ak nás chcete potešiť, budeme vďační za
           príspevok do nášho svadobného prasiatka na spoločný štart do manželského života."
         </p>
+        <p className="text-on-surface/80 mt-8 font-newsreader text-lg italic md:text-xl">
+          Kvetov sa prosím zrieknite — nevesta ich, žiaľ, nebude môcť odviezť so sebou do Prahy.
+        </p>
       </div>
     </section>
   );

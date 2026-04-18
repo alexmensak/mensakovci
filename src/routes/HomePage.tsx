@@ -20,8 +20,8 @@ export default function HomePage() {
       <Harmonogram />
       <Oblecenie />
       <Dary />
-      <Kontakt />
       <RsvpCta />
+      <Kontakt />
       <Footer />
     </div>
   );
