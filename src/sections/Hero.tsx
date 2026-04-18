@@ -16,7 +16,7 @@ export default function Hero() {
             <div className="mt-12 flex flex-col gap-8 md:mt-24 md:flex-row md:items-center md:gap-16">
               <div className="flex flex-col">
                 <span className="eyebrow mb-2">Dátum konania</span>
-                <p className="font-newsreader text-4xl">07. 09. 2024</p>
+                <p className="font-newsreader text-4xl">26. 09. 2026</p>
               </div>
               <div className="flex flex-col">
                 <span className="eyebrow mb-2">Miesto</span>
