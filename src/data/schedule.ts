@@ -1,8 +1,24 @@
-export type ScheduleItem = { time: string; label: string; title: string };
+export type ScheduleItem = {
+  time: string;
+  label: string;
+  title?: string;
+  subitems?: string[];
+};
 
 export const schedule: ScheduleItem[] = [
-  { time: '15:00', label: 'Obrad', title: 'Prisaháme si vernosť' },
-  { time: '16:30', label: 'Gratulácie', title: 'Spoločné fotografie a prípitok' },
-  { time: '18:00', label: 'Večera', title: 'Svadobné menu & Prvý tanec' },
-  { time: '22:00', label: 'Oslava', title: 'Tancovačka do rána bieleho' },
+  {
+    time: '15:00',
+    label: 'Obrad',
+    title: 'Prisaháme si vernosť',
+    subitems: ['Fotenie', 'Prípitok', 'Hostina', 'Prvý tanec'],
+  },
+  {
+    time: '20:00',
+    label: 'Tancovačka',
+  },
+  {
+    time: '24:00',
+    label: 'Tancovačka do rána bieleho',
+    subitems: ['Čepčenie', 'Redový tanec'],
+  },
 ];

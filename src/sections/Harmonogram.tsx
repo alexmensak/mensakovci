@@ -21,7 +21,14 @@ export default function Harmonogram() {
                 <h3 className="text-primary mb-2 font-label text-[11px] tracking-widest uppercase">
                   {item.label}
                 </h3>
-                <p className="font-newsreader text-2xl">{item.title}</p>
+                {item.title && <p className="font-newsreader text-2xl">{item.title}</p>}
+                {item.subitems && (
+                  <ul className="text-on-surface-variant mt-3 space-y-1 font-newsreader text-lg">
+                    {item.subitems.map((sub) => (
+                      <li key={sub}>{sub}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </li>
           ))}
