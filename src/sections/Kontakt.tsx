@@ -19,9 +19,6 @@ export default function Kontakt() {
             <p className="mb-1 font-newsreader text-2xl">
               <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a>
             </p>
-            <p className="text-secondary font-body text-sm">
-              <a href={`mailto:${contact.email}`}>{contact.email}</a>
-            </p>
           </div>
         ))}
       </div>

@@ -21,7 +21,7 @@ export default function Footer() {
         ))}
       </div>
       <p className="nav-link text-on-background dark:text-background opacity-40">
-        © {year} Alexander & Veronika. Created with Heritage.
+        © {year} Alexander & Veronika.
       </p>
     </footer>
   );

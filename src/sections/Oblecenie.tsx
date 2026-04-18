@@ -26,9 +26,6 @@ export default function Oblecenie() {
                   className="h-16 w-16 rounded-lg object-cover"
                   style={{ backgroundColor: swatch.hex }}
                 />
-                <span className="font-label text-center text-[9px] tracking-tighter uppercase">
-                  {swatch.name}
-                </span>
               </li>
             ))}
           </ul>

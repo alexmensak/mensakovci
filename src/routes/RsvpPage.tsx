@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
 import { getDb } from '@/lib/firebase';
 import DietFields from './rsvp/DietFields';
+import DrinkFields from './rsvp/DrinkFields';
 import IdentityFields from './rsvp/IdentityFields';
 import PhotosUpload from './rsvp/PhotosUpload';
 import { rsvpSchema, type RsvpFormValues } from './rsvp/schema';
@@ -29,7 +30,7 @@ export default function RsvpPage() {
     formState: { errors },
   } = useForm<RsvpFormValues>({
     resolver: zodResolver(rsvpSchema),
-    defaultValues: { guests: 1, drink: 'vino', dietary: '' },
+    defaultValues: { guests: 1, drinks: [], dietary: '' },
   });
 
   const onSubmit = async (values: RsvpFormValues) => {
@@ -78,25 +79,23 @@ export default function RsvpPage() {
                   />
                   <div className="bg-primary/5 absolute inset-0 mix-blend-multiply" />
                 </div>
-                <div className="border-outline-variant/30 border-l py-4 pl-8">
-                  <p className="text-on-surface font-newsreader text-xl italic">
-                    „Architektúra lásky sa buduje na detailoch a vašej prítomnosti."
-                  </p>
-                </div>
               </div>
             </div>
 
             <div className="lg:col-span-8">
               {status === 'success' ? (
-                <div className="bg-surface-container-low rounded-lg p-12 text-center">
-                  <h2 className="mb-4 font-newsreader text-4xl">Ďakujeme!</h2>
-                  <p className="text-secondary font-body">Vaše potvrdenie sme prijali.</p>
+                <div className="space-y-16">
+                  <div className="bg-surface-container-low rounded-lg p-12 text-center">
+                    <h2 className="mb-4 font-newsreader text-4xl">Ďakujeme!</h2>
+                    <p className="text-secondary font-body">Vaše potvrdenie sme prijali.</p>
+                  </div>
+                  <PhotosUpload />
                 </div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-24" noValidate>
                   <IdentityFields register={register} errors={errors} />
                   <DietFields register={register} />
-                  <PhotosUpload />
+                  <DrinkFields register={register} />
 
                   {errorMessage && (
                     <p className="text-error font-body text-sm" role="alert">

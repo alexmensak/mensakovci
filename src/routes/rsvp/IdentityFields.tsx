@@ -25,7 +25,7 @@ export default function IdentityFields({ register, errors }: Props) {
           <input
             id="fullName"
             type="text"
-            placeholder="Alexander Veľký"
+            placeholder="Meno a priezvisko"
             {...register('fullName')}
             className="border-outline-variant focus:border-primary placeholder:text-on-surface/20 w-full border-0 border-b bg-transparent px-0 py-4 font-newsreader text-xl transition-all focus:ring-0"
           />
@@ -49,6 +49,8 @@ export default function IdentityFields({ register, errors }: Props) {
             <option value={2}>2 osoby</option>
             <option value={3}>3 osoby</option>
             <option value={4}>4 osoby</option>
+            <option value={5}>5 osôb</option>
+            <option value={6}>6 osôb</option>
           </select>
         </div>
       </div>

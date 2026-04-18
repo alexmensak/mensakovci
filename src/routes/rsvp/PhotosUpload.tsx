@@ -1,12 +1,12 @@
 export default function PhotosUpload() {
   return (
     <div className="space-y-12">
-      <div className="bg-background sticky top-24 z-10 mb-8 py-4">
-        <h2 className="text-primary border-outline-variant/15 border-b pb-4 font-label text-[11px] tracking-[0.1rem] uppercase">
-          03. Spoločné spomienky
+      <div className="mb-8">
+        <h2 className="text-primary font-label text-[11px] tracking-[0.1rem] uppercase">
+          Spoločné spomienky
         </h2>
       </div>
-      <div className="bg-surface-container-low relative overflow-hidden rounded-lg p-12">
+      <div className="bg-surface-container-low relative overflow-hidden rounded-lg p-12 text-left">
         <div className="relative z-10 max-w-xl">
           <p className="mb-8 font-newsreader text-2xl leading-tight">
             Staňte sa kurátorom nášho dňa. Máte spoločnú fotku s Alexandrom alebo Veronikou?
