@@ -42,9 +42,13 @@ export default function IdentityFields({ register, errors }: Props) {
           </label>
           <select
             id="guests"
+            defaultValue=""
             {...register('guests')}
             className="border-outline-variant focus:border-primary w-full appearance-none border-0 border-b bg-transparent px-0 py-4 font-newsreader text-xl transition-all focus:ring-0"
           >
+            <option value="" disabled>
+              Vyberte počet
+            </option>
             <option value={1}>1 osoba</option>
             <option value={2}>2 osoby</option>
             <option value={3}>3 osoby</option>
@@ -52,6 +56,7 @@ export default function IdentityFields({ register, errors }: Props) {
             <option value={5}>5 osôb</option>
             <option value={6}>6 osôb</option>
           </select>
+          {errors.guests && <p className="text-error mt-2 text-xs">{errors.guests.message}</p>}
         </div>
       </div>
     </div>

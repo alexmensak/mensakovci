@@ -30,22 +30,31 @@ export default function RsvpPage() {
     formState: { errors },
   } = useForm<RsvpFormValues>({
     resolver: zodResolver(rsvpSchema),
-    defaultValues: { guests: 1, drinks: [], dietary: '' },
+    defaultValues: { drinks: [], dietary: '' },
   });
 
   const onSubmit = async (values: RsvpFormValues) => {
     setStatus('submitting');
     setErrorMessage(null);
     try {
-      await addDoc(collection(getDb(), 'rsvps'), {
+      const write = addDoc(collection(getDb(), 'rsvps'), {
         ...values,
         submittedAt: serverTimestamp(),
       });
+      const timeout = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error('Časový limit vypršal. Skúste to znova.')), 15000),
+      );
+      await Promise.race([write, timeout]);
       setStatus('success');
     } catch (err) {
+      console.error('RSVP submit failed', err);
       setStatus('error');
       setErrorMessage(err instanceof Error ? err.message : 'Nepodarilo sa odoslať.');
     }
+  };
+
+  const onInvalid = () => {
+    setErrorMessage('Skontrolujte vyplnené polia vyššie.');
   };
 
   return (
@@ -92,7 +101,11 @@ export default function RsvpPage() {
                   <PhotosUpload />
                 </div>
               ) : (
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-24" noValidate>
+                <form
+                  onSubmit={handleSubmit(onSubmit, onInvalid)}
+                  className="space-y-24"
+                  noValidate
+                >
                   <IdentityFields register={register} errors={errors} />
                   <DietFields register={register} />
                   <DrinkFields register={register} />

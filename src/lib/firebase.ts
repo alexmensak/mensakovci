@@ -15,6 +15,14 @@ let db: Firestore | undefined;
 
 export function getDb(): Firestore {
   if (!db) {
+    const missing = Object.entries(config)
+      .filter(([, value]) => !value)
+      .map(([key]) => key);
+    if (missing.length > 0) {
+      throw new Error(
+        `Firebase konfigurácia chýba (${missing.join(', ')}). Skontrolujte VITE_FIREBASE_* premenné.`,
+      );
+    }
     app = getApps()[0] ?? initializeApp(config);
     db = getFirestore(app);
   }
