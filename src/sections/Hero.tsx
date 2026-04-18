@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const HERO_IMAGE =
   'https://lh3.googleusercontent.com/aida-public/AB6AXuBAokpX1Khas7t3adfj-zS52H14cAAtbHBt2o29PRBEZAnMZHD3p5kCaA9NiXFgCmzMUbyac40L6I1eG6ll9BBT5DXnmNYKccJGwOqSHS-8lh0T9WiZk3sTo6dTq3lg9qzShgHXhh0VRuQjde_l-7zVpHOV2dGof9I5DN0Y3Nlee-mCvcdBlpUxJZpwQwaSpWLiJC4A3eDHdxIslWE_XUggOUjBimmdpOmRXsTwFQWwe9HdwWVswJGQh6ykRukrxAES57AanfA2y6jv';
 
@@ -21,6 +23,20 @@ export default function Hero() {
               <span className="eyebrow mb-2">Miesto</span>
               <p className="font-newsreader text-4xl">Liptovský Ján</p>
             </div>
+          </div>
+          <div className="mt-10 md:mt-16">
+            <Link
+              to="/rsvp"
+              className="group border-on-background/30 hover:border-on-background text-on-background inline-flex items-center gap-3 border-b pb-2 font-label text-[11px] tracking-[0.2rem] uppercase transition-colors"
+            >
+              <span>Potvrdiť účasť</span>
+              <span
+                className="material-symbols-outlined text-base transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                arrow_forward
+              </span>
+            </Link>
           </div>
         </div>
         <div className="relative aspect-[3/4] overflow-hidden rounded-lg md:col-span-4">
