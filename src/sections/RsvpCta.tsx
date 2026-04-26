@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function RsvpCta() {
   return (
     <section id="rsvp" className="bg-surface-container-highest px-8 py-32 text-center">
-      <div className="sticky-header-offset sticky py-4">
+      <div className="py-4 md:sticky-header-offset md:sticky">
         <h2 className="section-title mb-12">Budete tam s nami?</h2>
       </div>
       <div className="mt-8">

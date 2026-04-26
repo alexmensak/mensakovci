@@ -12,7 +12,7 @@ export default function Miesto() {
     <section id="miesto" className="bg-surface-container-low px-8 py-24 md:px-24 md:py-48">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 items-start gap-16 md:grid-cols-12">
-          <div className="sticky-header-offset sticky self-start space-y-8 md:col-span-4">
+          <div className="space-y-8 md:sticky-header-offset md:sticky md:col-span-4 md:self-start">
             <div>
               <span className="eyebrow mb-4 block">Lokalita</span>
               <h2 className="section-title mb-8">Miesto konania</h2>
