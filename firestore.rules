@@ -1,0 +1,23 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isValidRsvp(data) {
+      return data.keys().hasOnly(['fullName', 'guests', 'dietary', 'drinks', 'submittedAt'])
+        && data.fullName is string && data.fullName.size() >= 2 && data.fullName.size() <= 100
+        && data.guests is int && data.guests >= 1 && data.guests <= 6
+        && data.dietary is string && data.dietary.size() <= 1000
+        && data.submittedAt is timestamp;
+    }
+
+    match /rsvps/{doc} {
+      allow create: if isValidRsvp(request.resource.data);
+      allow read, update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

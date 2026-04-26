@@ -33,7 +33,7 @@ Only variables prefixed `VITE_` are exposed to the client bundle. Typed in `src/
 
 **RSVP form** (`src/routes/RsvpPage.tsx`) is the only stateful surface. Flow: `react-hook-form` + `zodResolver(rsvpSchema)` (`src/routes/rsvp/schema.ts`) → `addDoc` into Firestore collection `rsvps` via `getDb()` (`src/lib/firebase.ts`, lazy-initialized). The page drives a local `'idle' | 'submitting' | 'success' | 'error'` status; the form is replaced with a thank-you panel on success. Field components (`IdentityFields`, `DietFields`, `PhotosUpload`) receive `register`/`errors` as props — keep them dumb; state stays in the page.
 
-**Firestore security rules are not in this repo.** Writes to `rsvps` must be allowed by rules configured in the Firebase console. When adding new collections or fields, update those rules out-of-band.
+**Firestore security rules live in `firestore.rules`** at the repo root and are referenced by `firebase.json`. Deploy with `firebase deploy --only firestore:rules --project=mensakovci`. The current rules allow anonymous `create` on `rsvps` (with a strict schema validator: 5 expected fields, type/size/range checks, guests 1–6) and deny everything else. When the RSVP schema changes (`src/routes/rsvp/schema.ts`), update `firestore.rules` and redeploy.
 
 ## Styling system
 
