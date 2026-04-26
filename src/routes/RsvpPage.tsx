@@ -40,19 +40,21 @@ export default function RsvpPage() {
     }
     setStatus('submitting');
     setErrorMessage(null);
-    const write = addDoc(collection(getDb(), 'rsvps'), {
-      fullName: values.fullName,
-      guests: values.guests,
-      dietary: values.dietary,
-      drinks: values.drinks,
-      submittedAt: serverTimestamp(),
-    });
-    const timeout = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error('Časový limit vypršal. Skúste to znova.')), 15000),
-    );
-    const firestoreWithTimeout = Promise.race([write, timeout]);
+    const writeToFirestore = async () => {
+      const write = addDoc(collection(getDb(), 'rsvps'), {
+        fullName: values.fullName,
+        guests: values.guests,
+        dietary: values.dietary,
+        drinks: values.drinks,
+        submittedAt: serverTimestamp(),
+      });
+      const timeout = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error('Časový limit vypršal. Skúste to znova.')), 15000),
+      );
+      return Promise.race([write, timeout]);
+    };
     const [firestoreResult, sheetsResult] = await Promise.allSettled([
-      firestoreWithTimeout,
+      writeToFirestore(),
       postRsvpToSheet(values),
     ]);
     if (sheetsResult.status === 'rejected') {
