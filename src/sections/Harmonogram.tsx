@@ -2,8 +2,8 @@ import { schedule } from '@/data/schedule';
 
 export default function Harmonogram() {
   return (
-    <section id="harmonogram" className="px-8 py-24 md:px-24 md:py-48">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-16 md:grid-cols-12 md:gap-20">
+    <section id="harmonogram" className="section-px section-py">
+      <div className="section-shell grid grid-cols-1 items-start gap-12 md:grid-cols-12 md:gap-12 lg:gap-20">
         <div className="md:sticky-header-offset self-start md:sticky md:col-span-5">
           <span className="eyebrow mb-4 block">Časová os</span>
           <h2 className="section-title">Harmonogram</h2>
@@ -12,18 +12,18 @@ export default function Harmonogram() {
           {schedule.map((item, index) => (
             <li
               key={item.time}
-              className={`border-outline-variant/20 hover:bg-surface-container-low flex flex-col rounded-lg border-t px-4 py-12 transition-colors md:flex-row md:items-center ${
+              className={`flex flex-col rounded-lg border-t border-outline-variant/20 px-4 py-12 transition-colors hover:bg-surface-container-low md:flex-row md:items-center ${
                 index === schedule.length - 1 ? 'border-b' : ''
               }`}
             >
               <span className="mb-4 font-newsreader text-3xl md:mb-0 md:w-48">{item.time}</span>
               <div className="flex-grow">
-                <h3 className="text-primary mb-2 font-label text-[11px] tracking-widest uppercase">
+                <h3 className="mb-2 font-label text-[11px] uppercase tracking-widest text-primary">
                   {item.label}
                 </h3>
                 {item.title && <p className="font-newsreader text-2xl">{item.title}</p>}
                 {item.subitems && (
-                  <ul className="text-on-surface-variant mt-3 space-y-1 font-newsreader text-lg">
+                  <ul className="mt-3 space-y-1 font-newsreader text-lg text-on-surface-variant">
                     {item.subitems.map((sub) => (
                       <li key={sub}>{sub}</li>
                     ))}

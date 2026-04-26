@@ -1,31 +1,26 @@
 import MapCard from '@/components/MapCard';
 import { features, venue, type Feature } from '@/data/venues';
 
-const MAP_IMAGE_BASE =
-  'https://images.squarespace-cdn.com/content/v1/60507de0d0d313245a0c79cf/3a6fb481-3a53-4f46-9569-a8f0ba5c6148/ACS_0002+%282%29.jpg';
-const MAP_IMAGE_SRCSET = [100, 300, 500, 750, 1000, 1500, 2500]
-  .map((w) => `${MAP_IMAGE_BASE}?format=${w}w ${w}w`)
-  .join(', ');
+const VENUE_IMAGE = '/images/miesto-banner.webp';
 
 export default function Miesto() {
   return (
-    <section id="miesto" className="bg-surface-container-low px-8 py-24 md:px-24 md:py-48">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 items-start gap-16 md:grid-cols-12">
-          <div className="space-y-8 md:sticky-header-offset md:sticky md:col-span-4 md:self-start">
+    <section id="miesto" className="section-px section-py bg-surface-container-low">
+      <div className="section-shell">
+        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12 md:gap-12 lg:gap-16">
+          <div className="md:sticky-header-offset space-y-8 md:sticky md:col-span-4 md:self-start">
             <div>
               <span className="eyebrow mb-4 block">Lokalita</span>
               <h2 className="section-title mb-8">Miesto konania</h2>
-              <p className="text-secondary max-w-xs font-body leading-relaxed">
+              <p className="max-w-xs font-body leading-relaxed text-secondary">
                 Slávnosť sa uskutoční v Jánskej doline pod Nízkymi Tatrami, v tradičnej liptovskej
-                stodole, na dohľad od potoka
-                Štiavnica.
+                stodole, na dohľad od potoka Štiavnica.
               </p>
               <a
                 href="https://liptovskydvor.sk/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group border-on-background/30 hover:border-on-background text-on-background mt-6 inline-flex items-center gap-3 border-b pb-2 font-label text-[11px] tracking-[0.2rem] uppercase transition-colors"
+                className="group mt-6 inline-flex items-center gap-3 border-b border-on-background/30 pb-2 font-label text-[11px] uppercase tracking-[0.2rem] text-on-background transition-colors hover:border-on-background"
               >
                 <span>Liptovský dvor</span>
                 <span
@@ -39,17 +34,18 @@ export default function Miesto() {
             <MapCard venue={venue} />
           </div>
           <div className="space-y-12 md:col-span-8">
-            <div className="aspect-video overflow-hidden rounded-lg">
-              <img
-                alt="Liptovský dvor"
-                className="h-full w-full object-cover"
-                src={`${MAP_IMAGE_BASE}?format=1500w`}
-                srcSet={MAP_IMAGE_SRCSET}
-                sizes="(min-width: 768px) 66vw, 100vw"
-                loading="lazy"
-              />
+            <div className="relative">
+              <div className="image-frame" />
+              <div className="relative aspect-[2/1] overflow-hidden rounded-lg">
+                <img
+                  alt="Liptovský dvor — sála, drevenice, areál"
+                  className="h-full w-full object-cover"
+                  src={VENUE_IMAGE}
+                  loading="lazy"
+                />
+              </div>
             </div>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {features.map((feature) => (
                 <FeatureCard key={feature.title} feature={feature} />
               ))}
@@ -63,15 +59,12 @@ export default function Miesto() {
 
 function FeatureCard({ feature }: { feature: Feature }) {
   return (
-    <div className="border-outline-variant/20 bg-surface flex flex-col rounded-lg border p-8">
-      <span
-        className="material-symbols-outlined text-primary mb-6 text-3xl"
-        aria-hidden="true"
-      >
+    <div className="flex flex-col rounded-lg border border-outline-variant/20 bg-surface p-8">
+      <span className="material-symbols-outlined mb-6 text-3xl text-primary" aria-hidden="true">
         {feature.icon}
       </span>
       <h3 className="mb-3 font-newsreader text-2xl">{feature.title}</h3>
-      <p className="text-secondary font-body text-sm leading-relaxed">{feature.description}</p>
+      <p className="font-body text-sm leading-relaxed text-secondary">{feature.description}</p>
     </div>
   );
 }

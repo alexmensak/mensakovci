@@ -4,15 +4,12 @@ const DRESSCODE_IMAGE = '/images/dresscode/hero.png';
 
 export default function Oblecenie() {
   return (
-    <section
-      id="oblecenie"
-      className="bg-background text-on-background px-8 py-24 md:px-24 md:py-48"
-    >
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-24 md:grid-cols-12">
-        <div className="sticky-header-offset self-start md:col-span-6 md:sticky">
+    <section id="oblecenie" className="section-px section-py bg-background text-on-background">
+      <div className="section-shell grid grid-cols-1 items-start gap-16 md:grid-cols-12 md:gap-12 lg:gap-20">
+        <div className="sticky-header-offset self-start md:sticky md:col-span-6">
           <span className="eyebrow mb-4 block">Dresscode</span>
           <h2 className="section-title mb-8">Oblečenie</h2>
-          <p className="text-on-surface-variant mb-12 font-body text-lg leading-relaxed">
+          <p className="mb-12 font-body text-lg leading-relaxed text-on-surface-variant">
             Naša svadba bude ladená do prírodných, zemitých tónov. Budeme vďační, ak svoj outfit
             prispôsobíte uvedenej palete. Prosíme o formálne oblečenie.
           </p>
@@ -31,7 +28,7 @@ export default function Oblecenie() {
           </ul>
         </div>
         <div className="relative md:col-span-6">
-          <div className="border-primary/20 absolute inset-0 translate-x-4 translate-y-4 rounded-lg border" />
+          <div className="image-frame" />
           <img
             alt="Textile textures"
             className="relative aspect-square w-full rounded-lg object-contain"

@@ -9,6 +9,7 @@ import Miesto from '@/sections/Miesto';
 import Oblecenie from '@/sections/Oblecenie';
 import RsvpCta from '@/sections/RsvpCta';
 import Spomienky from '@/sections/Spomienky';
+import TesimeSa from '@/sections/TesimeSa';
 
 export default function HomePage() {
   useScrollToHash();
@@ -21,8 +22,9 @@ export default function HomePage() {
       <Harmonogram />
       <Oblecenie />
       <Dary />
-      <RsvpCta />
       <Spomienky />
+      <RsvpCta />
+      <TesimeSa />
       <Kontakt />
       <Footer />
     </div>

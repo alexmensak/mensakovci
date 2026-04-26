@@ -2,11 +2,11 @@ export default function PhotosUpload() {
   return (
     <div className="space-y-12">
       <div className="mb-8">
-        <h2 className="text-primary font-label text-[11px] tracking-[0.1rem] uppercase">
+        <h2 className="font-label text-[11px] uppercase tracking-[0.1rem] text-primary">
           Spoločné spomienky
         </h2>
       </div>
-      <div className="bg-surface-container-low relative overflow-hidden rounded-lg p-12 text-left">
+      <div className="relative overflow-hidden rounded-lg bg-surface-container-low p-12 text-left">
         <div className="relative z-10 max-w-xl">
           <p className="mb-8 font-newsreader text-2xl leading-tight">
             Staňte sa kurátorom nášho dňa. Máte spoločnú fotku s Alexandrom alebo Veronikou?
@@ -14,18 +14,18 @@ export default function PhotosUpload() {
           </p>
           <div className="flex flex-col gap-6">
             <div className="flex items-start gap-4">
-              <span className="material-symbols-outlined text-primary text-xl" aria-hidden="true">
+              <span className="material-symbols-outlined text-xl text-primary" aria-hidden="true">
                 camera
               </span>
-              <p className="text-secondary font-body text-xs leading-relaxed tracking-wider uppercase">
+              <p className="font-body text-xs uppercase leading-relaxed tracking-wider text-secondary">
                 PRED SVADBOU: Fotky na projekciu, ktoré nám pripomenú spoločné chvíle.
               </p>
             </div>
             <div className="flex items-start gap-4">
-              <span className="material-symbols-outlined text-primary text-xl" aria-hidden="true">
+              <span className="material-symbols-outlined text-xl text-primary" aria-hidden="true">
                 auto_stories
               </span>
-              <p className="text-secondary font-body text-xs leading-relaxed tracking-wider uppercase">
+              <p className="font-body text-xs uppercase leading-relaxed tracking-wider text-secondary">
                 PO SVADBE: Miesto pre vaše momentky, ktoré náš fotograf nestihol zachytiť.
               </p>
             </div>
@@ -33,15 +33,15 @@ export default function PhotosUpload() {
           <div className="mt-12">
             <label
               htmlFor="photos"
-              className="bg-on-background text-background hover:bg-primary inline-flex cursor-pointer items-center gap-4 rounded-lg px-8 py-4 font-label text-[10px] tracking-[0.1rem] uppercase transition-colors"
+              className="inline-flex cursor-pointer items-center gap-4 rounded-lg bg-on-background px-8 py-4 font-label text-[10px] uppercase tracking-[0.1rem] text-background transition-colors hover:bg-primary"
             >
               <span>Otvoriť archív</span>
               <input id="photos" type="file" multiple accept="image/*" className="hidden" />
             </label>
           </div>
         </div>
-        <div className="pointer-events-none absolute -right-12 -bottom-12 opacity-5">
-          <svg height="300" viewBox="0 0 100 100" width="300" aria-hidden="true">
+        <div className="pointer-events-none absolute bottom-0 right-0 aspect-square w-[40%] max-w-[300px] translate-x-[15%] translate-y-[15%] opacity-5">
+          <svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true">
             <path d="M50 0 L100 50 L50 100 L0 50 Z" fill="currentColor" />
             <circle cx="50" cy="50" fill="none" r="30" stroke="currentColor" />
           </svg>

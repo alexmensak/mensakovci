@@ -9,8 +9,8 @@ type Props = {
 export default function IdentityFields({ register, errors }: Props) {
   return (
     <div className="space-y-12">
-      <div className="bg-background sticky top-24 z-10 mb-8 py-4">
-        <h2 className="text-primary border-outline-variant/15 border-b pb-4 font-label text-[11px] tracking-[0.1rem] uppercase">
+      <div className="sticky top-24 z-10 mb-8 bg-background py-4">
+        <h2 className="border-b border-outline-variant/15 pb-4 font-label text-[11px] uppercase tracking-[0.1rem] text-primary">
           01. Osobné údaje
         </h2>
       </div>
@@ -18,7 +18,7 @@ export default function IdentityFields({ register, errors }: Props) {
         <div className="relative">
           <label
             htmlFor="fullName"
-            className="text-secondary mb-2 block font-label text-[10px] tracking-[0.1rem] uppercase"
+            className="mb-2 block font-label text-[10px] uppercase tracking-[0.1rem] text-secondary"
           >
             Celé meno
           </label>
@@ -27,16 +27,14 @@ export default function IdentityFields({ register, errors }: Props) {
             type="text"
             placeholder="Meno a priezvisko"
             {...register('fullName')}
-            className="border-outline-variant focus:border-primary placeholder:text-on-surface/20 w-full border-0 border-b bg-transparent px-0 py-4 font-newsreader text-xl transition-all focus:ring-0"
+            className="w-full border-0 border-b border-outline-variant bg-transparent px-0 py-4 font-newsreader text-xl transition-all placeholder:text-on-surface/20 focus:border-primary focus:ring-0"
           />
-          {errors.fullName && (
-            <p className="text-error mt-2 text-xs">{errors.fullName.message}</p>
-          )}
+          {errors.fullName && <p className="mt-2 text-xs text-error">{errors.fullName.message}</p>}
         </div>
         <div className="relative">
           <label
             htmlFor="guests"
-            className="text-secondary mb-2 block font-label text-[10px] tracking-[0.1rem] uppercase"
+            className="mb-2 block font-label text-[10px] uppercase tracking-[0.1rem] text-secondary"
           >
             Počet hostí
           </label>
@@ -44,7 +42,7 @@ export default function IdentityFields({ register, errors }: Props) {
             id="guests"
             defaultValue=""
             {...register('guests')}
-            className="border-outline-variant focus:border-primary w-full appearance-none border-0 border-b bg-transparent px-0 py-4 font-newsreader text-xl transition-all focus:ring-0"
+            className="w-full appearance-none border-0 border-b border-outline-variant bg-transparent px-0 py-4 font-newsreader text-xl transition-all focus:border-primary focus:ring-0"
           >
             <option value="" disabled>
               Vyberte počet
@@ -56,7 +54,7 @@ export default function IdentityFields({ register, errors }: Props) {
             <option value={5}>5 osôb</option>
             <option value={6}>6 osôb</option>
           </select>
-          {errors.guests && <p className="text-error mt-2 text-xs">{errors.guests.message}</p>}
+          {errors.guests && <p className="mt-2 text-xs text-error">{errors.guests.message}</p>}
         </div>
       </div>
     </div>

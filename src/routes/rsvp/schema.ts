@@ -1,14 +1,6 @@
 import { z } from 'zod';
 
-export const drinkValues = [
-  'vino',
-  'pivo',
-  'whisky',
-  'palene',
-  'gin',
-  'aperol',
-  'nealko',
-] as const;
+export const drinkValues = ['vino', 'pivo', 'whisky', 'palene', 'gin', 'aperol', 'nealko'] as const;
 
 export const rsvpSchema = z.object({
   fullName: z.string().min(2, 'Meno je povinné'),

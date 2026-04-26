@@ -60,31 +60,34 @@ export default function RsvpPage() {
     <div className="flex min-h-screen flex-col">
       <NavBar />
       <main className="flex-grow">
-        <section className="relative mx-auto flex max-w-7xl flex-col items-end justify-between gap-12 px-8 py-24 md:flex-row md:py-32">
+        <section className="section-px relative mx-auto flex max-w-7xl flex-col items-end justify-between gap-12 py-24 md:flex-row md:py-32 lg:py-40">
           <div className="sticky top-32 max-w-2xl">
             <span className="eyebrow mb-6 block">Prítomnosť je dar</span>
-            <h1 className="text-on-background font-headline text-6xl leading-[0.9] tracking-tight md:text-8xl">
+            <h1 className="font-headline text-6xl leading-[0.9] tracking-tight text-on-background md:text-8xl">
               Potvrdenie účasti
             </h1>
           </div>
           <div className="hidden text-right md:block md:w-1/3">
-            <p className="text-secondary font-body text-sm leading-relaxed opacity-70">
-              Prosíme o potvrdenie vašej účasti do konca mája, aby sme mohli doladiť každý
-              detail našej spoločnej oslavy.
+            <p className="font-body text-sm leading-relaxed text-secondary opacity-70">
+              Prosíme o potvrdenie vašej účasti do konca mája, aby sme mohli doladiť každý detail
+              našej spoločnej oslavy.
             </p>
           </div>
         </section>
 
-        <section className="px-8 pb-32">
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 lg:grid-cols-12">
+        <section className="section-px pb-32">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
               <div className="sticky top-32 space-y-12">
-                <div className="bg-surface-container relative aspect-[3/4] overflow-hidden rounded-lg">
-                  <img
-                    alt="Detail svadobnej pozvánky"
-                    className="h-full w-full object-cover"
-                    src={RSVP_IMAGE}
-                  />
+                <div className="relative">
+                  <div className="image-frame" />
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container">
+                    <img
+                      alt="Detail svadobnej pozvánky"
+                      className="h-full w-full object-cover"
+                      src={RSVP_IMAGE}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -92,9 +95,9 @@ export default function RsvpPage() {
             <div className="lg:col-span-8">
               {status === 'success' ? (
                 <div className="space-y-16">
-                  <div className="bg-surface-container-low rounded-lg p-12 text-center">
+                  <div className="rounded-lg bg-surface-container-low p-12 text-center">
                     <h2 className="mb-4 font-newsreader text-4xl">Ďakujeme!</h2>
-                    <p className="text-secondary font-body">Vaše potvrdenie sme prijali.</p>
+                    <p className="font-body text-secondary">Vaše potvrdenie sme prijali.</p>
                   </div>
                   <PhotosUpload />
                 </div>
@@ -109,7 +112,7 @@ export default function RsvpPage() {
                   <DrinkFields register={register} />
 
                   {errorMessage && (
-                    <p className="text-error font-body text-sm" role="alert">
+                    <p className="font-body text-sm text-error" role="alert">
                       {errorMessage}
                     </p>
                   )}
@@ -118,7 +121,7 @@ export default function RsvpPage() {
                     <button
                       type="submit"
                       disabled={status === 'submitting'}
-                      className="group bg-primary text-on-primary relative flex items-center gap-6 overflow-hidden rounded-lg px-12 py-6 font-label text-[12px] tracking-[0.2rem] uppercase transition-all disabled:opacity-60"
+                      className="group relative flex items-center gap-6 overflow-hidden rounded-lg bg-primary px-12 py-6 font-label text-[12px] uppercase tracking-[0.2rem] text-on-primary transition-all disabled:opacity-60"
                     >
                       <span className="relative z-10">
                         {status === 'submitting' ? 'Odosielam…' : 'Odoslať'}
@@ -129,7 +132,7 @@ export default function RsvpPage() {
                       >
                         arrow_forward
                       </span>
-                      <div className="bg-on-background absolute inset-0 opacity-0 transition-opacity group-hover:opacity-10" />
+                      <div className="absolute inset-0 bg-on-background opacity-0 transition-opacity group-hover:opacity-10" />
                     </button>
                   </div>
                 </form>

@@ -14,17 +14,18 @@ const drinkLabels: Record<(typeof drinkValues)[number], string> = {
 export default function DrinkFields({ register }: { register: UseFormRegister<RsvpFormValues> }) {
   return (
     <div className="space-y-12">
-      <div className="bg-background sticky top-24 z-10 mb-8 py-4">
-        <h2 className="text-primary border-outline-variant/15 border-b pb-4 font-label text-[11px] tracking-[0.1rem] uppercase">
+      <div className="sticky top-24 z-10 mb-8 bg-background py-4">
+        <h2 className="border-b border-outline-variant/15 pb-4 font-label text-[11px] uppercase tracking-[0.1rem] text-primary">
           03. Nápojový lístok
         </h2>
       </div>
       <fieldset className="space-y-6">
-        <legend className="text-secondary mb-2 block font-label text-[10px] tracking-[0.1rem] uppercase">
+        <legend className="mb-2 block font-label text-[10px] uppercase tracking-[0.1rem] text-secondary">
           Preferované nápoje
         </legend>
-        <p className="text-secondary font-body text-sm leading-relaxed opacity-80">
-          Zaujíma nás vaša preferencia, aby sme vedeli prispôsobiť množstvo vašich obľúbených nápojov. Môžete vybrať viacero možností.
+        <p className="font-body text-sm leading-relaxed text-secondary opacity-80">
+          Zaujíma nás vaša preferencia, aby sme vedeli prispôsobiť množstvo vašich obľúbených
+          nápojov. Môžete vybrať viacero možností.
         </p>
         <div className="flex flex-wrap gap-4 pt-2">
           {drinkValues.map((value) => (
@@ -35,7 +36,7 @@ export default function DrinkFields({ register }: { register: UseFormRegister<Rs
                 {...register('drinks')}
                 className="peer sr-only"
               />
-              <span className="border-outline-variant/30 peer-checked:bg-on-background peer-checked:text-background peer-checked:border-on-background peer-focus-visible:ring-primary block rounded-lg border px-6 py-3 font-label text-[10px] tracking-[0.1rem] uppercase transition-all peer-focus-visible:ring-2">
+              <span className="block rounded-lg border border-outline-variant/30 px-6 py-3 font-label text-[10px] uppercase tracking-[0.1rem] transition-all peer-checked:border-on-background peer-checked:bg-on-background peer-checked:text-background peer-focus-visible:ring-2 peer-focus-visible:ring-primary">
                 {drinkLabels[value]}
               </span>
             </label>

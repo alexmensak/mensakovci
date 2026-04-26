@@ -2,18 +2,19 @@ import { Link } from 'react-router-dom';
 
 export default function RsvpCta() {
   return (
-    <section id="rsvp" className="bg-surface-container-highest px-8 py-32 text-center">
-      <div className="py-4 md:sticky-header-offset md:sticky">
+    <section
+      id="rsvp"
+      className="section-px bg-surface-container-highest py-24 text-center md:py-32 lg:py-40"
+    >
+      <div className="section-shell">
         <h2 className="section-title mb-12">Budete tam s nami?</h2>
-      </div>
-      <div className="mt-8">
         <Link
           to="/rsvp"
-          className="bg-primary text-on-primary shadow-primary/10 inline-block rounded-lg px-16 py-6 font-label text-[12px] tracking-[0.2rem] uppercase shadow-xl transition-all hover:opacity-90"
+          className="inline-block rounded-lg bg-primary px-16 py-6 font-label text-[12px] uppercase tracking-[0.2rem] text-on-primary shadow-xl shadow-primary/10 transition-all hover:opacity-90"
         >
           Potvrdiť účasť
         </Link>
-        <p className="text-secondary mt-8 font-label text-[10px] tracking-widest uppercase">
+        <p className="mt-8 font-label text-[10px] uppercase tracking-widest text-secondary">
           Prosíme o potvrdenie do 31. Mája 2026
         </p>
       </div>
