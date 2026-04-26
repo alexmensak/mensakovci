@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
 import { getDb } from '@/lib/firebase';
+import { postRsvpToSheet } from '@/lib/sheets';
 import DietFields from './rsvp/DietFields';
 import DrinkFields from './rsvp/DrinkFields';
 import IdentityFields from './rsvp/IdentityFields';
@@ -33,23 +34,41 @@ export default function RsvpPage() {
   });
 
   const onSubmit = async (values: RsvpFormValues) => {
+    if (values.website) {
+      setStatus('success');
+      return;
+    }
     setStatus('submitting');
     setErrorMessage(null);
-    try {
-      const write = addDoc(collection(getDb(), 'rsvps'), {
-        ...values,
-        submittedAt: serverTimestamp(),
-      });
-      const timeout = new Promise<never>((_, reject) =>
-        setTimeout(() => reject(new Error('Časový limit vypršal. Skúste to znova.')), 15000),
-      );
-      await Promise.race([write, timeout]);
-      setStatus('success');
-    } catch (err) {
-      console.error('RSVP submit failed', err);
-      setStatus('error');
-      setErrorMessage(err instanceof Error ? err.message : 'Nepodarilo sa odoslať.');
+    const write = addDoc(collection(getDb(), 'rsvps'), {
+      fullName: values.fullName,
+      guests: values.guests,
+      dietary: values.dietary,
+      drinks: values.drinks,
+      submittedAt: serverTimestamp(),
+    });
+    const timeout = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error('Časový limit vypršal. Skúste to znova.')), 15000),
+    );
+    const firestoreWithTimeout = Promise.race([write, timeout]);
+    const [firestoreResult, sheetsResult] = await Promise.allSettled([
+      firestoreWithTimeout,
+      postRsvpToSheet(values),
+    ]);
+    if (sheetsResult.status === 'rejected') {
+      console.warn('Sheets sync failed (non-blocking)', sheetsResult.reason);
     }
+    if (firestoreResult.status === 'fulfilled') {
+      setStatus('success');
+      return;
+    }
+    console.error('RSVP submit failed', firestoreResult.reason);
+    setStatus('error');
+    setErrorMessage(
+      firestoreResult.reason instanceof Error
+        ? firestoreResult.reason.message
+        : 'Nepodarilo sa odoslať.',
+    );
   };
 
   const onInvalid = () => {
@@ -107,6 +126,20 @@ export default function RsvpPage() {
                   className="space-y-24"
                   noValidate
                 >
+                  <input
+                    type="text"
+                    {...register('website')}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    style={{
+                      position: 'absolute',
+                      left: '-9999px',
+                      width: '1px',
+                      height: '1px',
+                      overflow: 'hidden',
+                    }}
+                  />
                   <IdentityFields register={register} errors={errors} />
                   <DietFields register={register} />
                   <DrinkFields register={register} />

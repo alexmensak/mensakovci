@@ -11,6 +11,7 @@ export const rsvpSchema = z.object({
     .max(6),
   dietary: z.string().optional().default(''),
   drinks: z.array(z.enum(drinkValues)).default([]),
+  website: z.string().max(0).optional().default(''),
 });
 
 export type RsvpFormValues = z.infer<typeof rsvpSchema>;
