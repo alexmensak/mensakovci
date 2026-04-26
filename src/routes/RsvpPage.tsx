@@ -104,7 +104,7 @@ export default function RsvpPage() {
 
         <section className="section-px pb-32">
           <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 md:gap-12 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-4">
+            <div className={status === 'success' ? 'order-2 lg:order-1 lg:col-span-4' : 'lg:col-span-4'}>
               <div className="sticky top-32 space-y-12">
                 <div className="relative">
                   <div className="image-frame" />
@@ -119,28 +119,14 @@ export default function RsvpPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-8">
+            <div className={status === 'success' ? 'order-1 lg:order-2 lg:col-span-8' : 'lg:col-span-8'}>
               {status === 'success' ? (
                 <div className="space-y-16">
                   <div className="rounded-lg bg-surface-container-low p-12 text-center">
                     <h2 className="mb-4 font-newsreader text-4xl">Ďakujeme!</h2>
                     <p className="font-body text-secondary">Vaše potvrdenie sme prijali.</p>
                   </div>
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container">
-                    <img
-                      alt="Detail svadobnej pozvánky"
-                      className="h-full w-full object-cover"
-                      src={RSVP_IMAGE}
-                    />
-                  </div>
                   <PhotosUpload />
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container">
-                    <img
-                      alt="Detail svadobnej pozvánky"
-                      className="h-full w-full object-cover"
-                      src={RSVP_IMAGE}
-                    />
-                  </div>
                 </div>
               ) : (
                 <form
