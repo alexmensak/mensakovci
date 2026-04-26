@@ -24,6 +24,12 @@ export default function RsvpPage() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (status === 'success' || status === 'error') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [status]);
+
   const {
     register,
     handleSubmit,
