@@ -16,7 +16,7 @@ export default function Dary() {
             <span className="eyebrow-sm mb-4 block text-primary">Kvety</span>
             <p className="font-newsreader text-lg italic leading-relaxed text-on-surface-variant md:text-xl">
               Kvety, prosím, vynechajte. Keďže naše kroky po svadbe smerujú rovno do Prahy, kytice
-              by nám po ceste rýchlo zvädli.
+              by nám po ceste zvädli.
             </p>
           </div>
         </div>

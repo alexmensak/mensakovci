@@ -11,16 +11,16 @@ export default function Oblecenie() {
           <h2 className="section-title mb-8">Oblečenie</h2>
           <p className="mb-12 font-body text-lg leading-relaxed text-on-surface-variant">
             Naša svadba bude ladená do prírodných, zemitých tónov. Budeme vďační, ak svoj outfit
-            prispôsobíte uvedenej palete. Prosíme o formálne oblečenie.
+            prispôsobíte uvedenej farebnej palete. Prosíme o formálne oblečenie.
           </p>
-          <ul className="flex flex-wrap gap-4">
+          <ul className="grid grid-cols-5 gap-2 sm:gap-4">
             {dresscodePalette.map((swatch) => (
               <li key={swatch.name} className="flex flex-col gap-3">
                 <img
                   src={swatch.image}
                   alt=""
                   aria-hidden="true"
-                  className="h-24 w-24 rounded-lg object-cover"
+                  className="aspect-square w-full rounded-lg object-cover"
                   style={{ backgroundColor: swatch.hex }}
                 />
               </li>
