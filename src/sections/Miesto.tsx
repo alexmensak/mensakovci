@@ -14,7 +14,7 @@ export default function Miesto() {
               <h2 className="section-title mb-8">Miesto konania</h2>
               <p className="max-w-xs font-body leading-relaxed text-secondary">
                 Slávnosť sa uskutoční v Jánskej doline pod Nízkymi Tatrami, v tradičnej liptovskej
-                stodole, na dohľad od potoka Štiavnica.
+                stodole.
               </p>
               <a
                 href="https://liptovskydvor.sk/"

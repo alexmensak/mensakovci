@@ -126,7 +126,21 @@ export default function RsvpPage() {
                     <h2 className="mb-4 font-newsreader text-4xl">Ďakujeme!</h2>
                     <p className="font-body text-secondary">Vaše potvrdenie sme prijali.</p>
                   </div>
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container">
+                    <img
+                      alt="Detail svadobnej pozvánky"
+                      className="h-full w-full object-cover"
+                      src={RSVP_IMAGE}
+                    />
+                  </div>
                   <PhotosUpload />
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container">
+                    <img
+                      alt="Detail svadobnej pozvánky"
+                      className="h-full w-full object-cover"
+                      src={RSVP_IMAGE}
+                    />
+                  </div>
                 </div>
               ) : (
                 <form
