@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import GooglePhotosIcon from '@/components/GooglePhotosIcon';
 
 export default function Spomienky() {
   return (
@@ -6,14 +7,13 @@ export default function Spomienky() {
       <div className="section-shell grid grid-cols-1 items-start gap-12 md:grid-cols-12 md:gap-12 lg:gap-16">
         <div className="sticky-header-offset self-start md:sticky md:col-span-5">
           <span className="eyebrow mb-4 block">Spoločné spomienky</span>
-          <h2 className="section-title mb-8">Fotky na stenu</h2>
+          <h2 className="section-title mb-8">Fotky na premietanie</h2>
           <p className="mb-6 font-body text-lg leading-relaxed text-on-surface-variant">
-            Máte spoločnú fotku s Alexandrom alebo Veronikou? Nahrajte ju pred svadbou do nášho
-            archívu — počas svadobnej zábavy ju premietneme na stenu a pripomenieme si spoločné
-            chvíle.
+            Máte fotky zo spoločných zážitkov s nami? Nahrajte ich pred svadbou do nášho
+            albumu — počas svadobnej zábavy ich premietneme na stenu.
           </p>
           <p className="font-body text-sm leading-relaxed text-secondary">
-            Staré i nové, vážne i veselé. Čím viac, tým lepšie.
+            Staré i nové, vážne i veselé. Čím viac, tým lepšie!
           </p>
         </div>
         <div className="relative md:col-span-7">
@@ -53,13 +53,13 @@ export default function Spomienky() {
               </div>
               <div className="border-t border-outline-variant/20 pt-8">
                 <Link
-                  to="/rsvp#spomienky"
+                  to="https://photos.app.goo.gl/mCPLaUgPwbA3PTdp8"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-4 rounded-lg bg-on-background px-8 py-4 font-label text-[10px] uppercase tracking-[0.1rem] text-background transition-colors hover:bg-primary"
                 >
-                  <span>Otvoriť archív</span>
-                  <span className="material-symbols-outlined text-base" aria-hidden="true">
-                    arrow_forward
-                  </span>
+                  <span>Otvoriť album</span>
+                  <GooglePhotosIcon className="h-4 w-4" />
                 </Link>
               </div>
             </div>

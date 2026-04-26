@@ -1,3 +1,6 @@
+import {Link} from "react-router-dom";
+import GooglePhotosIcon from "@/components/GooglePhotosIcon";
+
 export default function PhotosUpload() {
   return (
     <div className="space-y-12">
@@ -9,8 +12,8 @@ export default function PhotosUpload() {
       <div className="relative overflow-hidden rounded-lg bg-surface-container-low p-12 text-left">
         <div className="relative z-10 max-w-xl">
           <p className="mb-8 font-newsreader text-2xl leading-tight">
-            Staňte sa kurátorom nášho dňa. Máte spoločnú fotku s Alexandrom alebo Veronikou?
-            Nahrajte ju do nášho archívu.
+            Máte fotky zo spoločných zážitkov s nami? Nahrajte ich pred svadbou do nášho
+            albumu — počas svadobnej zábavy ich premietneme na stenu.
           </p>
           <div className="flex flex-col gap-6">
             <div className="flex items-start gap-4">
@@ -31,13 +34,15 @@ export default function PhotosUpload() {
             </div>
           </div>
           <div className="mt-12">
-            <label
-              htmlFor="photos"
-              className="inline-flex cursor-pointer items-center gap-4 rounded-lg bg-on-background px-8 py-4 font-label text-[10px] uppercase tracking-[0.1rem] text-background transition-colors hover:bg-primary"
+            <Link
+                to="https://photos.app.goo.gl/mCPLaUgPwbA3PTdp8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-4 rounded-lg bg-on-background px-8 py-4 font-label text-[10px] uppercase tracking-[0.1rem] text-background transition-colors hover:bg-primary"
             >
-              <span>Otvoriť archív</span>
-              <input id="photos" type="file" multiple accept="image/*" className="hidden" />
-            </label>
+              <span>Otvoriť album</span>
+              <GooglePhotosIcon className="h-4 w-4" />
+            </Link>
           </div>
         </div>
         <div className="pointer-events-none absolute bottom-0 right-0 aspect-square w-[40%] max-w-[300px] translate-x-[15%] translate-y-[15%] opacity-5">
