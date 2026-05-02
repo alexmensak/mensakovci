@@ -30,6 +30,6 @@ export const features: Feature[] = [
   {
     icon: 'cottage',
     title: 'Ubytovanie',
-    description: 'Tradičné dreveničky s raňajkami priamo v areáli — pre hostí z ďaleka. Príchod od 14:00.',
+    description: 'Tradičné dreveničky s raňajkami priamo v areáli — pre hostí z ďaleka. Ubytovať sa je možné od 14:00.',
   },
 ];
